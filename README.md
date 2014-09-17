@@ -143,6 +143,44 @@ def app_notify
 end
 ```
 
+### Query Order
+
+```ruby
+params = { 
+  out_trade_no: "your unique trade number"
+}
+
+response = WechatPay::Order.query("access_token", params)
+# =>
+#  { 
+#    errcode: 0, 
+#    errmsg:  "ok", 
+#    order_info: {
+#      ret_code:      0, 
+#      ret_msg:       "", 
+#      input_charset: "GBK", 
+#      trade_state:   "0", 
+#      trade_mode:    "1", 
+#      partner:       "1123311", 
+#      bank_type:     "SPDB_DEBIT", 
+#      bank_billno:   "201407173120292906", 
+#      total_fee:     "48", 
+#      fee_type:      "1", 
+#      transaction_id:"123221001201409173175088219", 
+#      out_trade_no:  "956", 
+#      is_split:      "false", 
+#      is_refund:     "false", 
+#      attach:        "", 
+#      time_end:      "20140717150912", 
+#      transport_fee: "0", 
+#      product_fee:   "4800", 
+#      discount:      "0", 
+#      rmb_total_fee: ""
+#    }
+#  }
+
+```
+
 ## Contributing
 
 1. Fork it
